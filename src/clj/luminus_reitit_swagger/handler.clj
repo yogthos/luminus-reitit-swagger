@@ -18,11 +18,17 @@
   :start
   (ring/ring-handler
     (ring/router
-      (concat (home-routes) (service-routes)))
+      [(home-routes)
+       (service-routes)])
     (ring/routes
-      (swagger-ui/create-swagger-ui-handler {:root "/swagger-ui" :path "/" :url "/api/swagger.json"})
-      (ring/create-resource-handler {:path "/"})
-      (wrap-content-type (wrap-webjars (constantly nil)))
+      (swagger-ui/create-swagger-ui-handler
+        {:path "/swagger-ui"
+         :url "/api/swagger.json"
+         :config {:validator-url nil}})
+      (ring/create-resource-handler
+        {:path "/"})
+      (wrap-content-type
+        (wrap-webjars (constantly nil)))
       (ring/create-default-handler
         {:not-found
          (constantly (error-page {:status 404, :title "404 - Page not found"}))
