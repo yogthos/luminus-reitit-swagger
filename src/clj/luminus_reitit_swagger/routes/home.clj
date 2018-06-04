@@ -15,6 +15,5 @@
    {:middleware [middleware/wrap-base
                  middleware/wrap-csrf
                  middleware/wrap-formats]}
-   ["/" {:get {:handler home-page}}]
+   ["/" {:get home-page}]
    ["/about" {:get about-page}]])
-

@@ -11,7 +11,7 @@
                  [luminus/ring-ttl-session "0.3.2"]
                  [markdown-clj "1.0.2"]
                  [metosin/muuntaja "0.5.0"]
-                 [metosin/reitit "0.1.1"]
+                 [metosin/reitit "0.1.2-SNAPSHOT"]
                  [metosin/ring-http-response "0.9.0"]
                  [mount "0.1.12"]
                  [org.clojure/clojure "1.9.0"]
